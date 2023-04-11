@@ -33,6 +33,7 @@
 
 
     <build>
+        <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -41,12 +42,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <goals>install</goals>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <goals>install</goals>-->
+<!--                    <autoVersionSubmodules>true</autoVersionSubmodules>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
+        </pluginManagement>
     </build>
 
     <scm>
