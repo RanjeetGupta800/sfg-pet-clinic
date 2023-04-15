@@ -5,6 +5,7 @@ import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -15,7 +16,7 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements O
     private final PetTypeService petTypeService;
     private final PetService petService;
 
-    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
+    public OwnerMapService(@Lazy PetTypeService petTypeService,@Lazy PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
     }
