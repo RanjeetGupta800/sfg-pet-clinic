@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 
 @Component
@@ -18,15 +19,14 @@ public class DataLoader implements CommandLineRunner {
 
     private final SpecialityService specialitiesService;
 
-    private final VisitService visitService;
+    //private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialitiesService,@Lazy VisitService visitService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialitiesService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialitiesService = specialitiesService;
-        this.visitService = visitService;
     }
 
 
@@ -97,12 +97,12 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
         System.out.println("Loaded Owner..........");
 
-        Visit catVisit = new Visit();
-        catVisit.setPet(bharatCat);
-        catVisit.setDate(LocalDate.now());
-        catVisit.setDescription("Sneezy Kitty");
-
-        visitService.save(catVisit);
+//        Visit catVisit = new Visit();
+//        catVisit.setPet(bharatCat);
+//        catVisit.setDate(LocalDate.now());
+//        catVisit.setDescription("Sneezy Kitty");
+//
+//        visitService.save(catVisit);
 
         Vet vet=new Vet();
         vet.setId(1L);
